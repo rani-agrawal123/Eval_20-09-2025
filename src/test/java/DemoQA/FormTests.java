@@ -45,8 +45,17 @@ public class FormTests {
 	
 	@Test
 	void register() {
-//		driver.findElement(By.xpath("//img[@alt=\"Selenium Online Training\"]")).click();
+		driver.findElement(By.xpath("//img[@alt=\"Selenium Online Training\"]")).click();
 		driver.get("https://www.toolsqa.com/selenium-training/");
+		driver.findElement(By.linkText("Go To Registration ")).click();
+		driver.findElement(By.id("first-name")).sendKeys("Rani");
+		driver.findElement(By.id("last-name")).sendKeys("agrawal");
+		driver.findElement(By.id("email")).sendKeys("Rani@gmail.com");
+		driver.findElement(By.id("mobile")).sendKeys("7584658759");
+		driver.findElement(By.id("country")).click();
+		driver.findElement(By.id("city")).sendKeys("Bhopal");
+		driver.findElement(By.id("message")).sendKeys("Hello, Welcome To This Page");
+		driver.findElement(By.xpath("//button[text()='Send']")).click();
 	}
 	
 	@AfterMethod
